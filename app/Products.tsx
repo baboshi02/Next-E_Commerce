@@ -8,17 +8,20 @@ const Product = ({ product }: { product: ProductType }) => {
   const router = useRouter();
   return (
     <div
-      className="flex flex-col  items-center p-2 border-black border-2 hover:cursor-pointer hover:bg-thirdColor transition duration-300 overflow-hidden"
+      className="flex flex-col  items-center p-2 border-black border-2 hover:cursor-pointer group hover:text-secondaryColor hover:bg-primaryColor text-primaryColor transition duration-300 box-border max-h-min  overflow-hidden"
       onClick={() => router.push(`/products/${product.id}`)}
     >
       <Image
         src={product.image}
-        alt={product.description}
+        alt={"item is" + product.title}
         width={150}
         height={150}
-        className="w-[200px] h-[200px] "
+        className="w-[200px] h-[200px] border border-primaryColor group-hover:border-secondaryColor group-hover:w-[230px] group-hover:h-[230px] "
       />
       <p>{product.title}</p>
+      <p className="text-lg text-black group-hover:text-gray-400">
+        {product.price}$
+      </p>
     </div>
   );
 };
