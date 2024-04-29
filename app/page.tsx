@@ -1,4 +1,4 @@
-import Product from "./Products";
+import Product from "./Product";
 
 export interface ProductType {
   id: string;
@@ -23,7 +23,6 @@ export default async function Home() {
   // await new Promise((res) => setTimeout(() => res("done"), 10000));
   return (
     <>
-      <h1 className="text-2xl">Products</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-2 gap-2">
         {products.map((product: ProductType) => (
           <Product product={product} key={product.id} />

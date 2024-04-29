@@ -19,11 +19,12 @@ const Header = () => {
   ];
   const path = usePathname();
   return (
-    <header className="h-16   bg-transparent border-primaryColor border-b-2 rounded-md shadow-md flex justify-center items-center gap-7 p-1">
+    <header className="h-16 sticky top-4 bg-secondaryColor w-1/4 min-w-80 mx-auto rounded-full border  border-blue-600  shadow-md flex justify-center items-center gap-7 p-1">
       {Items.map((item) => (
         <Link
           href={item.link}
-          className={`hover:text-thirdColor  transition-colors duration-200 ${
+          key={item.link}
+          className={`hover:text-zinc-300 transition-colors duration-200 ${
             path == item.link ? "text-gray-400" : "text-primaryColor"
           }`}
         >
