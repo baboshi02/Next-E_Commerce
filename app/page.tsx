@@ -1,33 +1,25 @@
-import Product from "./Product";
-
-export interface ProductType {
-  id: string;
-  title: string;
-  price: string;
-  category: string;
-  description: string;
-  image: string;
-}
-
+import Products from "./Products";
+import { Suspense } from "react";
+import { AiOutlineLoading } from "react-icons/ai";
 export default async function Home() {
-  let products;
-  try {
-    products = await fetch("https://fakestoreapi.com/products").then((res) =>
-      res.json()
-    );
-  } catch (err: any) {
-    console.log(err?.message);
-    return <h1>Error</h1>;
-  }
   // To create loading effect
   // await new Promise((res) => setTimeout(() => res("done"), 10000));
   return (
-    <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-2 gap-2">
-        {products.map((product: ProductType) => (
-          <Product product={product} key={product.id} />
-        ))}
+    <div className="m-10 font-sans">
+      <div className="h-[50vh] text-left">
+        <h2 className="text-4xl sm:text-6xl lg:text-7xl text-primaryColor font-bold tracking-wide">
+          Next js eCommerce
+        </h2>
       </div>
-    </>
+      <div className="text-center">
+        <Suspense
+          fallback={
+            <AiOutlineLoading size={50} className="animate-spin mx-auto" />
+          }
+        >
+          <Products />
+        </Suspense>
+      </div>
+    </div>
   );
 }
