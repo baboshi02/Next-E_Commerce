@@ -1,7 +1,8 @@
 import React from "react";
 
-const loading = () => {
-  return <div>loading...</div>;
+import { AiOutlineLoading } from "react-icons/ai";
+const Loading = () => {
+  return <AiOutlineLoading size={50} className="animate-spin mx-auto" />;
 };
 
-export default loading;
+export default Loading;

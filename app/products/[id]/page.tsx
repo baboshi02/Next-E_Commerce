@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { Suspense } from "react";
 
-import { ProductType } from "@/app/page";
+import { ProductType } from "@/app/Products";
 
 const Page = async ({ params }: { params: { id: string } }) => {
   let product: ProductType;
@@ -13,6 +14,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
     console.log("Error: ", err);
     return <h1>Error: {err.message}</h1>;
   }
+  await new Promise((res) => setTimeout(res, 5000));
   return (
     <div className="flex justify-center items-center h-full text-left ">
       <div className=" items-center p-2    ">

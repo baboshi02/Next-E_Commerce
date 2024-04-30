@@ -1,6 +1,6 @@
 import Products from "./Products";
 import { Suspense } from "react";
-import { AiOutlineLoading } from "react-icons/ai";
+import Loading from "./loading";
 export default async function Home() {
   // To create loading effect
   // await new Promise((res) => setTimeout(() => res("done"), 10000));
@@ -12,11 +12,7 @@ export default async function Home() {
         </h2>
       </div>
       <div className="text-center">
-        <Suspense
-          fallback={
-            <AiOutlineLoading size={50} className="animate-spin mx-auto" />
-          }
-        >
+        <Suspense fallback={<Loading />}>
           <Products />
         </Suspense>
       </div>
