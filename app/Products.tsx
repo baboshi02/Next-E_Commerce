@@ -1,8 +1,6 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 export interface ProductType {
   id: string;
   title: string;
@@ -13,7 +11,6 @@ export interface ProductType {
 }
 
 const Product = ({ product }: { product: ProductType }) => {
-  const router = useRouter();
   return (
     <Link
       className="flex flex-col flex-nowrap  items-center p-2  hover:cursor-pointer group hover:text-secondaryColor hover:bg-primaryColor text-primaryColor transition duration-300 min-h-60 max-h-full   overflow-hidden"
@@ -27,7 +24,7 @@ const Product = ({ product }: { product: ProductType }) => {
         className="w-[200px] h-[200px]  border border-primaryColor group-hover:border-secondaryColor group-hover:w-[210px] group-hover:h-[210px] transition-all duration-500"
       />
       <p>{product.title}</p>
-      <p className="text-lg text-black group-hover:text-gray-400">
+      <p className="text-lg  text-thirdColor group-hover:text-blue-700">
         {product.price}$
       </p>
     </Link>
@@ -35,6 +32,7 @@ const Product = ({ product }: { product: ProductType }) => {
 };
 
 const Products = async () => {
+  await new Promise((res) => setTimeout(res, 2000));
   console.log("rendered baboshi");
   let products;
   try {
