@@ -1,8 +1,11 @@
-import React from "react";
-import { AiOutlineLoading } from "react-icons/ai";
+import Loading from "@/app/loading";
 
-const Loading = () => {
-  return <AiOutlineLoading size={50} className="animate-spin mx-auto" />;
+const headerLoading = () => {
+  return (
+    <div className="flex h-screen justify-center items-center">
+      <Loading />
+    </div>
+  );
 };
 
-export default Loading;
+export default headerLoading;

@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const ImageComponent = ({ link }: { link: string }) => {
   return (
-    <div className="  relative bg-black/50 ">
+    <div className="relative bg-transparent/30    ">
       <Image
         src={link}
         fill
-        className="h-full w-full  object-cover"
+        className="h-full w-full  object-cover -z-10 lg:object-center"
         alt="/photo"
       />
     </div>
@@ -22,7 +22,7 @@ const Hero = () => {
   ];
   return (
     <div className="m-10 font-sans grid md:grid-cols-2  grid-cols-1  gap-1 h-[100vh]  max-w-[1680px] mx-auto">
-      <h2 className="text-4xl sm:text-6xl  text-left lg:text-7xl text-primaryColor  p-0.5   font-bold tracking-wide max-w-fit">
+      <h2 className="text-4xl sm:text-5xl  text-left lg:text-7xl text-primaryColor  p-1   font-bold tracking-wide max-w-fit">
         Next js eCommerce
       </h2>
       {links.map((link) => (

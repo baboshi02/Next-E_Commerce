@@ -13,7 +13,7 @@ export interface ProductType {
 const Product = ({ product }: { product: ProductType }) => {
   return (
     <Link
-      className="flex flex-col flex-nowrap  items-center p-2  hover:cursor-pointer group hover:text-secondaryColor hover:bg-primaryColor text-primaryColor transition duration-300 min-h-60 max-h-full   overflow-hidden"
+      className="flex flex-col flex-nowrap  items-center p-2  hover:cursor-pointer group hover:text-thirdColor hover:bg-primaryColor text-primaryColor transition duration-300 min-h-60 max-h-full   overflow-hidden"
       href={`/products/${product.id}`}
     >
       <Image
@@ -24,7 +24,7 @@ const Product = ({ product }: { product: ProductType }) => {
         className="w-[200px] h-[200px]  border border-primaryColor group-hover:border-secondaryColor group-hover:w-[210px] group-hover:h-[210px] transition-all duration-500"
       />
       <p>{product.title}</p>
-      <p className="text-lg  text-thirdColor group-hover:text-blue-700">
+      <p className="text-lg  text-thirdColor group-hover:text-secondaryColor transition duration-300">
         {product.price}$
       </p>
     </Link>
@@ -44,7 +44,7 @@ const Products = async () => {
     return <h1>Error: {err.message}</h1>;
   }
   // To Create Loading Effecr
-  // await new Promise((res) => setTimeout(res, 3000));
+  await new Promise((res) => setTimeout(res, 3000));
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-2 gap-2">
       {products.map((product: ProductType) => (
