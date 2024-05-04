@@ -4,6 +4,7 @@ import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import React from "react";
 import { IoMdHome } from "react-icons/io";
 import { usePathname } from "next/navigation";
+import SearchBar from "./components/SearchBar";
 interface headerComponent {
   component: React.ReactElement;
   link: string;
@@ -34,6 +35,7 @@ const Header = () => {
           </Link>
         );
       })}
+      <SearchBar />
     </header>
   );
 };

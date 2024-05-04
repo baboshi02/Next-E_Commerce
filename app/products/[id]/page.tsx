@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
-import { ProductType } from "@/app/Products";
+import { ProductType } from "@/app/lib/interfaces/ProductType";
 
 const Page = async ({ params }: { params: { id: string } }) => {
   let product: ProductType;

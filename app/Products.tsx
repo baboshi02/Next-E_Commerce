@@ -1,14 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-export interface ProductType {
-  id: string;
-  title: string;
-  price: string;
-  category: string;
-  description: string;
-  image: string;
-}
+import { ProductType } from "./lib/interfaces/ProductType";
 
 const Product = ({ product }: { product: ProductType }) => {
   return (
