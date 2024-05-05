@@ -8,6 +8,6 @@ export const GET = async (req: NextRequest) => {
     return NextResponse.json(res, { status: 200 });
   } catch (e) {
     console.error(e);
-    return NextResponse.json({}, { status: 404, statusText: "Error fetching" });
+    return NextResponse.json({}, { status: 400, statusText: "Error fetching" });
   }
 };

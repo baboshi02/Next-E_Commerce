@@ -1,17 +1,18 @@
-import React, { SyntheticEvent, useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ProductType } from "../lib/interfaces/ProductType";
 import { useFetch } from "../hooks/useFetch";
-
+import SearchProductElement from "./searchProductElement";
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState<Array<ProductType>>([]);
   const { response, isError } = useFetch("/api/products");
   const handleChange = () => {
     const _filteredData = response.filter((r: ProductType) =>
-      r.title.includes(query)
+      r.title.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredData(_filteredData);
   };
+  useEffect(handleChange, [query]);
   console.log(filteredData);
   return (
     <div className="relative group ">
@@ -20,18 +21,17 @@ const SearchBar = () => {
           type="text"
           placeholder="Search... "
           value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-            handleChange();
-          }}
+          onChange={(e) => setQuery(e.target.value)}
         />
       </form>
-      <div className="h-10 w-full absolute hidden  flex-col gap-1 top-8  group-hover:flex bg-gray-600">
+      <div className="max-h-[25vh] overflow-scroll w-full absolute hidden border-2 border-primaryColor   flex-col    group-hover:flex  transition duration-200 shadow-xl rounded-md">
         {isError ? (
           <>Error</>
         ) : (
+          filteredData?.length > 0 &&
+          query.length > 0 &&
           filteredData?.map((r: ProductType) => (
-            <div className="bg-pink-400"> {r.title}</div>
+            <SearchProductElement Product={r} />
           ))
         )}
       </div>
