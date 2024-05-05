@@ -1,24 +1,11 @@
 import React, { SyntheticEvent, useEffect, useState } from "react";
 import { ProductType } from "../lib/interfaces/ProductType";
+import { useFetch } from "../hooks/useFetch";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
-  const [filteredData, setFilteredData] = useState<Array<any>>([]);
-  const [response, setResponse] = useState<Array<ProductType | any>>([]);
-  const [isError, setIsError] = useState(false);
-  const handleSubmit = async () => {
-    const response = await fetch("/api/products");
-    if (response.status !== 200) {
-      setIsError(true);
-    } else {
-      setIsError(false);
-      const data = await response.json();
-      setResponse(data);
-    }
-  };
-  useEffect(() => {
-    handleSubmit();
-  }, []);
+  const [filteredData, setFilteredData] = useState<Array<ProductType>>([]);
+  const { response, isError } = useFetch("/api/products");
   const handleChange = () => {
     const _filteredData = response.filter((r: ProductType) =>
       r.title.includes(query)
