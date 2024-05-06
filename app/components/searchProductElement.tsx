@@ -5,7 +5,7 @@ import Image from "next/image";
 const SearchProductElement = ({ Product }: { Product: ProductType }) => {
   return (
     <Link
-      className="bg-secondaryColor text-sm  overflow-hidden  border min-h-[10vh] p-1 h-auto flex text-thirdColor hover:bg-gray-300 group hover:text-secondaryColor"
+      className="bg-secondaryColor text-sm  overflow-hidden transition-colors duration-300  border min-h-[10vh] p-1 h-auto flex text-thirdColor hover:bg-gray-300 group hover:text-secondaryColor"
       href={`/products/${Product.id}`}
     >
       <Image
