@@ -13,7 +13,6 @@ const SearchBar = () => {
     setFilteredData(_filteredData);
   };
   useEffect(handleChange, [query]);
-  console.log(filteredData);
   return (
     <div className="relative group ">
       <form onSubmit={(e) => e.preventDefault()}>

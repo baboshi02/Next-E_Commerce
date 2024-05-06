@@ -1,17 +1,15 @@
 "use client";
 import Link from "next/link";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
-import React from "react";
+import React, { useState } from "react";
 import { IoMdHome } from "react-icons/io";
 import { usePathname } from "next/navigation";
 import SearchBar from "./components/SearchBar";
 import { IoMdMenu } from "react-icons/io";
-interface headerComponent {
-  component: React.ReactElement;
-  link: string;
-}
+import headerComponent from "./lib/interfaces/HeaderComponent";
+import MobileMenu from "./components/mobileMenu";
 
-const Header = () => {
+const NavBar = () => {
   const Items: headerComponent[] = [
     { component: <IoMdHome size={40} />, link: "/" },
     {
@@ -21,7 +19,7 @@ const Header = () => {
   ];
   const path = usePathname();
   return (
-    <header className="sticky top-0 z-10 bg-secondaryColor  rounded-sm border-b    border-primaryColor  shadow-md  p-2">
+    <header className="sticky top-0 z-10 bg-secondaryColor  rounded-sm border-b flex justify-end sm:block    border-primaryColor  shadow-md  p-2">
       <div className="sm:flex justify-between items-center gap-7 hidden">
         <div className="flex gap-2">
           {Items.map((item) => {
@@ -41,12 +39,9 @@ const Header = () => {
         </div>
         {path == "/" && <SearchBar />}
       </div>
-      <IoMdMenu
-        size={40}
-        className="hover:text-zinc-300 transition-colors hover:cursor-pointer sm:hidden duration-200 ml-auto text-thirdColor"
-      />
+      <MobileMenu Items={Items} path={path} />
     </header>
   );
 };
 
-export default Header;
+export default NavBar;
