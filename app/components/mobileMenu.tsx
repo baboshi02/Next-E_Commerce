@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { FaSearch } from "react-icons/fa";
 import React, { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import headerComponent from "../lib/interfaces/HeaderComponent";
+import SearchBar from "./SearchBar";
 
-const MobileMenu = ({
+const MobileNavBar = ({
   Items,
   path,
 }: {
@@ -12,16 +14,17 @@ const MobileMenu = ({
 }) => {
   const [isBtnActive, setIsBtnActive] = useState(false);
   return (
-    <div className="relative flex flex-col sm:hidden ">
+    <div className=" flex items-center gap-2 justify-end sm:hidden ">
+      {path == "/" && <SearchBar />}
       <IoMdMenu
         size={40}
-        className={`hover:text-zinc-300 transition-colors hover:cursor-pointer  duration-200  ${
+        className={`hover:text-zinc-300 transition-colors z-20 hover:cursor-pointer  duration-200  ${
           isBtnActive ? "text-gray-400" : "text-thirdColor"
         }`}
         onClick={() => setIsBtnActive(!isBtnActive)}
       />
       <div
-        className={`bg-secondaryColor border border-primaryColor h-auto p-1 right-0.5 absolute w-auto top-9 flex-col gap-1   ${
+        className={`absolute top-0 right-0 left-0 bottom-0 flex-col bg-black h-screen justify-center items-center gap-2  ${
           isBtnActive ? "flex" : "hidden"
         }`}
       >
@@ -31,6 +34,7 @@ const MobileMenu = ({
             <Link
               href={item.link}
               key={item.link}
+              onClick={() => setIsBtnActive(!isBtnActive)}
               className={`hover:text-zinc-300 transition-colors duration-200 ${
                 path == item.link ? "text-gray-400" : "text-thirdColor"
               }`}
@@ -44,4 +48,4 @@ const MobileMenu = ({
   );
 };
 
-export default MobileMenu;
+export default MobileNavBar;

@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import SearchBar from "./components/SearchBar";
 import { IoMdMenu } from "react-icons/io";
 import headerComponent from "./lib/interfaces/HeaderComponent";
-import MobileMenu from "./components/mobileMenu";
+import MobileNavBar from "./components/mobileMenu";
 
 const NavBar = () => {
   const Items: headerComponent[] = [
@@ -39,7 +39,7 @@ const NavBar = () => {
         </div>
         {path == "/" && <SearchBar />}
       </div>
-      <MobileMenu Items={Items} path={path} />
+      <MobileNavBar Items={Items} path={path} />
     </header>
   );
 };
