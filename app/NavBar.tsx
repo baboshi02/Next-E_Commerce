@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
-import React, { useState } from "react";
+import React from "react";
+import { FaCommentDollar } from "react-icons/fa6";
 import { IoMdHome } from "react-icons/io";
 import { usePathname } from "next/navigation";
 import SearchBar from "./components/SearchBar";
-import { IoMdMenu } from "react-icons/io";
 import headerComponent from "./lib/interfaces/HeaderComponent";
 import MobileNavBar from "./components/mobileMenu";
 
@@ -14,7 +14,11 @@ const NavBar = () => {
     { component: <IoMdHome size={40} />, link: "/" },
     {
       component: <MdOutlineProductionQuantityLimits size={40} />,
-      link: "/shoppingCart",
+      link: "/products",
+    },
+    {
+      component: <FaCommentDollar size={40} />,
+      link: "/Cart",
     },
   ];
   const path = usePathname();
@@ -37,7 +41,7 @@ const NavBar = () => {
             );
           })}
         </div>
-        {path == "/" && <SearchBar />}
+        {path == "/products" && <SearchBar />}
       </div>
       <MobileNavBar Items={Items} path={path} />
     </header>
