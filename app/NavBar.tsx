@@ -32,9 +32,8 @@ const NavBar = () => {
               <Link
                 href={item.link}
                 key={item.link}
-                className={`hover:text-zinc-300 transition-colors duration-200 ${
-                  path == item.link ? "text-gray-400" : "text-thirdColor"
-                }`}
+                className={`hover:text-zinc-300 transition-colors duration-200 ${isPath ? "text-gray-400" : "text-thirdColor"
+                  }`}
               >
                 {item.component}
               </Link>

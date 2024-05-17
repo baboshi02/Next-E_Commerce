@@ -2,6 +2,10 @@ import React from "react";
 import { ProductType } from "@/app/lib/interfaces/ProductType";
 import ProductElement from "./productElement";
 const Products = async () => {
+  console.log(
+    "Hello world"
+  )
+  
   await new Promise((res) => setTimeout(res, 2000));
   console.log("rendered baboshi");
   let products;

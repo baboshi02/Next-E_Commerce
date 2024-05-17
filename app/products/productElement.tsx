@@ -6,6 +6,15 @@ import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 
 import Image from "next/image";
 const ProductElement = ({ product }: { product: ProductType }) => {
+  const handleClick = (ProductName: string) => {
+    if (!localStorage.getItem(ProductName)) {
+      localStorage.setItem(ProductName, '1')
+    }
+    let itemNum = Number(localStorage.getItem(ProductName))
+    itemNum++
+    localStorage.setItem(ProductName, String(itemNum))
+
+  }
   return (
     <div className="flex flex-col flex-nowrap  items-center p-2  hover:cursor-pointer group hover:text-thirdColor hover:bg-primaryColor text-primaryColor transition duration-300 min-h-60 max-h-full   overflow-hidden">
       <Image
@@ -16,8 +25,8 @@ const ProductElement = ({ product }: { product: ProductType }) => {
         className="w-[200px] h-[200px]  border border-primaryColor group-hover:border-secondaryColor  transition-all duration-500"
       />
       <p>{product.title}</p>
+      {product.price}$
       <p className="text-lg  text-thirdColor group-hover:text-secondaryColor transition duration-300">
-        {product.price}$
       </p>
       <div className="group-hover:flex gap-3 hidden transition duration-200">
         <Link href={`/products/${product.id}`}>
@@ -26,7 +35,7 @@ const ProductElement = ({ product }: { product: ProductType }) => {
 
         <MdOutlineProductionQuantityLimits
           size={20}
-          onClick={() => localStorage.setItem(product.id, product.price)}
+          onClick={() => handleClick(product.title)}
         />
       </div>
     </div>
