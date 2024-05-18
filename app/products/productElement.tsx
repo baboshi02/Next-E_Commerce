@@ -6,20 +6,20 @@ import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import KVInterface from "../lib/interfaces/lsCartInterface";
 import Image from "next/image";
 const ProductElement = ({ product }: { product: ProductType }) => {
-  const handleClick = (ProductName: string) => {
-    const Products = localStorage.getItem("Products")
+  const handleClick = (Id: string) => {
+    const Products = sessionStorage.getItem("Products")
     if (!Products) {
-      localStorage.setItem("Products", JSON.stringify({ [ProductName]: 1 }))
+      sessionStorage.setItem("Products", JSON.stringify({ [Id]: 1 }))
     } else {
       const parsedProducts: KVInterface = JSON.parse(Products)
-      if (!parsedProducts[ProductName]) {
-        parsedProducts[ProductName] = 1
-        localStorage.setItem("Products", JSON.stringify(parsedProducts))
+      if (!parsedProducts[Id]) {
+        parsedProducts[Id] = 1
+        sessionStorage.setItem("Products", JSON.stringify(parsedProducts))
       } else {
 
-        parsedProducts[ProductName]++
+        parsedProducts[Id]++
 
-        localStorage.setItem("Products", JSON.stringify(parsedProducts))
+        sessionStorage.setItem("Products", JSON.stringify(parsedProducts))
       }
     }
 
@@ -44,7 +44,7 @@ const ProductElement = ({ product }: { product: ProductType }) => {
 
         <MdOutlineProductionQuantityLimits
           size={20}
-          onClick={() => handleClick(product.title)}
+          onClick={() => handleClick(product.id)}
         />
       </div>
     </div>
