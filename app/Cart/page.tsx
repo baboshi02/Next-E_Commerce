@@ -1,28 +1,21 @@
 "use client";
-import React, { Key, useEffect, useState } from "react";
-interface KVInterface {
-  key: string,
-  value: string | null
-}
+import React, { useEffect, useState } from "react";
 const page = () => {
-  const [products, setProduct] = useState<Array<KVInterface>>()
+  const [products, setProducts] = useState<Array<string>>([])
+  const parsedProducts = typeof window !== "undefined" ? JSON.parse(localStorage.Products) : {}
   useEffect(() => {
-    const keys = Object.keys(window.localStorage)
-    const kv: KVInterface[] = keys.map(key => {
-      const value = window.localStorage.getItem(key)
-      return { key, value }
-    })
-    setProduct(kv)
-  }, [window.localStorage])
+
+    setProducts(Object.keys(parsedProducts))
+  }, [])
   return (
     <div>
       {
-        products?.map((product: KVInterface, index: Key) => {
-          return <div key={index} >Product Name:{product.key} ,Number :{product.value}</div>
-        })
+        products.map((product, index) => (
+          <div key={index}>Name:{product}, Number:{parsedProducts[product]}</div>
+        ))
       }
     </div>
-  );
+  )
 };
 
 export default page;

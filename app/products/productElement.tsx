@@ -3,16 +3,25 @@ import Link from "next/link";
 import { ProductType } from "../lib/interfaces/ProductType";
 import { FaInfoCircle } from "react-icons/fa";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
-
+import KVInterface from "../lib/interfaces/lsCartInterface";
 import Image from "next/image";
 const ProductElement = ({ product }: { product: ProductType }) => {
   const handleClick = (ProductName: string) => {
-    if (!localStorage.getItem(ProductName)) {
-      localStorage.setItem(ProductName, '1')
+    const Products = localStorage.getItem("Products")
+    if (!Products) {
+      localStorage.setItem("Products", JSON.stringify({ [ProductName]: 1 }))
+    } else {
+      const parsedProducts: KVInterface = JSON.parse(Products)
+      if (!parsedProducts[ProductName]) {
+        parsedProducts[ProductName] = 1
+        localStorage.setItem("Products", JSON.stringify(parsedProducts))
+      } else {
+
+        parsedProducts[ProductName]++
+
+        localStorage.setItem("Products", JSON.stringify(parsedProducts))
+      }
     }
-    let itemNum = Number(localStorage.getItem(ProductName))
-    itemNum++
-    localStorage.setItem(ProductName, String(itemNum))
 
   }
   return (
