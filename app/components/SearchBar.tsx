@@ -5,11 +5,11 @@ import SearchProductElement from "./searchProductElement";
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState<Array<ProductType>>([]);
-  const { response, isError } = useFetch("/api/products");
+  const { response, isError } = useFetch<ProductType[]>("/api/products");
   const handleChange = () => {
-    const _filteredData = response.filter((r: ProductType) =>
+    const _filteredData = response?.filter((r: ProductType) =>
       r.title.toLowerCase().includes(query.toLowerCase())
-    );
+    ) || [];
     setFilteredData(_filteredData);
   };
   useEffect(handleChange, [query]);

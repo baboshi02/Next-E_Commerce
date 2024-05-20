@@ -13,7 +13,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
     return <h1>Error: {err.message}</h1>;
   }
   // To Create Loading Effect
-  await new Promise((res) => setTimeout(res, 5000));
+  //await new Promise((res) => setTimeout(res, 5000));
   return (
     <div className="flex justify-center items-center h-full text-left ">
       <div className=" items-center p-2    ">
