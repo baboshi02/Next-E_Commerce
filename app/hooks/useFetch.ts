@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ProductType } from "../lib/interfaces/ProductType";
 
 export const useFetch = <t>(link: string) => {
   const [response, setResponse] = useState<t>();

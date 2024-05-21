@@ -17,7 +17,6 @@ const ProductElement = ({ product }: { product: ProductType }) => {
         <Link href={`/products/${product.id}`}>
           <FaInfoCircle size={20} />
         </Link>
-
         <MdOutlineProductionQuantityLimits
           size={20}
           onClick={() => addProductStorage(product.id)}

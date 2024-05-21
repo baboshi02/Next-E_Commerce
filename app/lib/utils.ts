@@ -1,6 +1,6 @@
 import KVInterface from "./interfaces/lsCartInterface"
+//Function to add a product to the sessionStorage
 export const addProductStorage = (Id: string) => {
-  //Function to add a product to the sessionStorage
   const Products = sessionStorage.getItem("Products")
   if (!Products) {
     sessionStorage.setItem("Products", JSON.stringify({ [Id]: 1 }))
