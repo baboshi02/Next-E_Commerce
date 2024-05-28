@@ -15,7 +15,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   // To Create Loading Effect
   //await new Promise((res) => setTimeout(res, 5000));
   return (
-    <div className="flex justify-center items-center h-full text-left ">
+    <div className="flex  items-center h-full text-left ">
       <div className=" items-center p-2    ">
         <h1 className="text-3xl text-thirdColor text-center mb-5">
           {product.title}

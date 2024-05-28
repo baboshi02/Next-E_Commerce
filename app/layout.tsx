@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import Header from "./NavBar";
-import { Inter } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
+import { cn } from '@/lib/utils'
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ecommerce App",
   description: "Ecommerce App",
 };
 
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,9 +22,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="bg-secondaryColor box-border text-center text-lg"
+
     >
-      <body className={inter.className}>
+      <body className={cn("min-h-screen font-sans bg-secondaryColor box-border text-center text-lg", fontSans.variable)}>
         <Header />
         <div className="m-2 p-1">{children}</div>
       </body>
