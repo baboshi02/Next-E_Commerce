@@ -5,14 +5,12 @@ import Image from "next/image";
 import { useFetch } from "../hooks/useFetch";
 interface CartProps {
   productId: string;
-  count: string
+  count: number
 }
 
 const CartProductElement = ({ productId, count }: CartProps) => {
   const { response, isError } = useFetch<ProductType>(`https://fakestoreapi.com/products/${productId}`)
   const product = response
-  console.log('isError: ', isError)
-  console.log(response)
   return (
     <>
       {

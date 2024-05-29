@@ -1,4 +1,6 @@
 
 export default interface CartInterface {
-  [key: string]: number
+  ID: string;
+  Count: number;
+  Price: string
 }
