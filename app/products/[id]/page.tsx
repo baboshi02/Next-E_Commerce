@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { ProductType } from "@/app/lib/interfaces/ProductType";
-
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
+import AddToStorageButton from "@/app/components/addToStorageButton";
 const Page = async ({ params }: { params: { id: string } }) => {
   let product: ProductType;
   try {
@@ -34,6 +35,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
           <p className="text-primaryColor">{product.price} $</p>
           <h1 className="text-thirdColor">category: </h1>
           <p className="text-primaryColor"> {product.category.toUpperCase()}</p>
+          <AddToStorageButton product={product} />
         </div>
       </div>
     </div>

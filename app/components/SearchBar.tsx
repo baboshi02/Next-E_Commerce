@@ -14,7 +14,7 @@ const SearchBar = () => {
   };
   useEffect(handleChange, [query]);
   return (
-    <div className="relative group ">
+    <div className="relative  ">
       <form onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
@@ -23,17 +23,19 @@ const SearchBar = () => {
           onChange={(e) => setQuery(e.target.value)}
         />
       </form>
-      <div className="max-h-[25vh] overflow-scroll w-full absolute hidden border-2 border-primaryColor   flex-col    group-hover:flex  transition duration-200 shadow-xl rounded-md">
-        {isError ? (
-          <>Error</>
-        ) : (
-          filteredData?.length > 0 &&
-          query.length > 0 &&
-          filteredData?.map((r: ProductType) => (
-            <SearchProductElement Product={r} />
-          ))
-        )}
-      </div>
+      {isError ? (
+        <>Error</>
+      ) : (
+        filteredData?.length > 0 &&
+        query.length > 0 &&
+        <div className="max-h-[25vh] overflow-scroll w-full absolute  border-2 border-primaryColor   flex-col    flex  transition duration-200 shadow-xl rounded-md">
+          {
+            filteredData?.map((r: ProductType) => (
+              <SearchProductElement Product={r} />
+            ))
+          }
+        </div>
+      )}
     </div>
   );
 };

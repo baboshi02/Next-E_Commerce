@@ -3,7 +3,7 @@ import Header from "./NavBar";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from '@/lib/utils'
-
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Ecommerce App",
@@ -27,6 +27,7 @@ export default function RootLayout({
       <body className={cn("min-h-screen font-sans bg-secondaryColor box-border text-center text-lg", fontSans.variable)}>
         <Header />
         <div className="m-2 p-1">{children}</div>
+        <Toaster />
       </body>
     </html>
   );
