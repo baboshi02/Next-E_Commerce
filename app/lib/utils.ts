@@ -1,17 +1,17 @@
 import KVInterface from "./interfaces/CartInterface"
 //Function to add a product to the sessionStorage
-export const addProductStorage = (Id: string, price: string) => {
+export const addProductStorage = (Id: string, price: string, count: string) => {
   const Products = sessionStorage.getItem("Products")
   if (!Products) {
-    sessionStorage.setItem("Products", JSON.stringify([{ "ID": Id, "Count": 1, "Price": price }]))
+    sessionStorage.setItem("Products", JSON.stringify([{ "ID": Id, "Count": Number(count), "Price": price }]))
   } else {
     const parsedProducts: KVInterface[] = JSON.parse(Products)
     const Product = parsedProducts.find(product => product.ID === Id)
     if (!Product) {
-      parsedProducts.push({ "ID": Id, "Count": 1, "Price": price })
+      parsedProducts.push({ "ID": Id, "Count": Number(count), "Price": price })
       sessionStorage.setItem("Products", JSON.stringify(parsedProducts))
     } else {
-      sessionStorage.setItem("Products", JSON.stringify(parsedProducts.map(product => product.ID == Product.ID ? { ...product, Count: product.Count + 1 } : product)))
+      sessionStorage.setItem("Products", JSON.stringify(parsedProducts.map(product => product.ID == Product.ID ? { ...product, Count: count } : product)))
     }
   }
 

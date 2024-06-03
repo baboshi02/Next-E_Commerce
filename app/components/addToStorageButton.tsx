@@ -6,7 +6,7 @@ import { addProductStorage } from "../lib/utils"
 import { Button } from "@/components/ui/button"
 import { ProductType } from "../lib/interfaces/ProductType"
 
-const AddToStorageButton = ({ product }: { product: ProductType }) => {
+const AddToStorageButton = ({ product, count }: { product: ProductType, count: string }) => {
   const { toast } = useToast()
   return (
     <ToolTipComponent trigger={
@@ -16,7 +16,7 @@ const AddToStorageButton = ({ product }: { product: ProductType }) => {
             title: "Item added to cart",
             description: `${product.title} added to cart successfully`,
           })
-          addProductStorage(product.id, product.price)
+          addProductStorage(product.id, product.price, count)
         }}
       >
         <MdOutlineProductionQuantityLimits

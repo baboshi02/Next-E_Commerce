@@ -16,7 +16,7 @@ const Products = async () => {
     return <h1>Error: {err.message}</h1>;
   }
   // To Create Loading Effecr
-  await new Promise((res) => setTimeout(res, 3000));
+  // await new Promise((res) => setTimeout(res, 3000));
   return (
     <>
       <h1 className="text-5xl text-thirdColor text-center mb-5"> Products</h1>

@@ -5,9 +5,9 @@ import React from "react";
 import { FaCommentDollar } from "react-icons/fa6";
 import { IoMdHome } from "react-icons/io";
 import { usePathname } from "next/navigation";
-import SearchBar from "./components/SearchBar";
-import headerComponent from "./lib/interfaces/HeaderComponent";
-import MobileNavBar from "./components/mobileMenu";
+import SearchBar from "./SearchBar";
+import headerComponent from "@/app/lib/interfaces/HeaderComponent";
+import MobileNavBar from "./mobileMenu";
 
 const NavBar = () => {
   const Items: headerComponent[] = [
@@ -26,19 +26,17 @@ const NavBar = () => {
     <header className="sticky top-0 z-10 bg-secondaryColor  rounded-sm border-b flex justify-end sm:block    border-primaryColor  shadow-md  p-2">
       <div className="sm:flex justify-between items-center gap-7 hidden">
         <div className="flex gap-2">
-          {Items.map((item) => {
-            const isPath = path == item.link;
-            return (
-              <Link
-                href={item.link}
-                key={item.link}
-                className={`hover:text-zinc-300 transition-colors duration-200 ${isPath ? "text-gray-400" : "text-thirdColor"
-                  }`}
-              >
-                {item.component}
-              </Link>
-            );
-          })}
+          {Items.map(item => (
+            <Link
+              href={item.link}
+              key={item.link}
+              className={`hover:text-zinc-300 transition-colors duration-200 ${path == item.link ? "text-gray-400" : "text-thirdColor"
+                }`}
+            >
+              {item.component}
+            </Link>
+          )
+          )}
         </div>
         {path == "/products" && <SearchBar />}
       </div>

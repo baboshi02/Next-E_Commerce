@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Header from "./NavBar";
+import NavBar from "@/app/components/NavBar";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from '@/lib/utils'
@@ -25,7 +25,7 @@ export default function RootLayout({
 
     >
       <body className={cn("min-h-screen font-sans bg-secondaryColor box-border text-center text-lg", fontSans.variable)}>
-        <Header />
+        <NavBar />
         <div className="m-2 p-1">{children}</div>
         <Toaster />
       </body>

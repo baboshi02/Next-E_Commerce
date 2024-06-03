@@ -9,8 +9,7 @@ const Page = () => {
   const [totalPrice, setTotalPrice] = useState(0)
   useEffect(() => {
     const parsedProducts = sessionStorage.Products ? JSON.parse(sessionStorage.Products) : []
-    const _totalPrice = getTotalPrice()
-    setTotalPrice(_totalPrice)
+    setTotalPrice(getTotalPrice())
     setProducts(parsedProducts)
   }, [])
   return (
