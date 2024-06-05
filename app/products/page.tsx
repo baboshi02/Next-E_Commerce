@@ -1,6 +1,6 @@
 import React from "react";
 import { ProductType } from "@/app/lib/interfaces/ProductType";
-import ProductElement from "./productElement";
+import ProductElement from "../components/productElement";
 import { Suspense } from "react";
 import Loading from "../loading";
 const Products = async () => {

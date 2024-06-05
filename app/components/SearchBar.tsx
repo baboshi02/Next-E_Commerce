@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ProductType } from "../lib/interfaces/ProductType";
 import { useFetch } from "../hooks/useFetch";
 import SearchProductElement from "./searchProductElement";
+//TODO: wxtract to cusrom hook
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState<Array<ProductType>>([]);

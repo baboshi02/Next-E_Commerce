@@ -1,3 +1,4 @@
+import CartInterface from "./interfaces/CartInterface"
 import KVInterface from "./interfaces/CartInterface"
 //Function to add a product to the sessionStorage
 export const addProductStorage = (Id: string, price: string, count: string) => {
@@ -26,4 +27,16 @@ export const getTotalPrice = () => {
   let totalPrice = 0
   parsedProducts.map(product => totalPrice += product.Count * Number(product.Price))
   return totalPrice
+}
+
+export const getProductCount = (id: string) => {
+  const parsedProducts: CartInterface[] = sessionStorage.Products ? JSON.parse(sessionStorage.Products) : []
+  const sessionProduct = parsedProducts.find(product => product.ID == id)
+  return sessionProduct?.Count || 0
+}
+
+export const deleteProduct = (id: string) => {
+  const parsedProducts: CartInterface[] = sessionStorage.Products ? JSON.parse(sessionStorage.Products) : []
+  const deletedProducts = parsedProducts.filter(product => product.ID != id)
+  sessionStorage.setItem('Products', JSON.stringify(deletedProducts))
 }
