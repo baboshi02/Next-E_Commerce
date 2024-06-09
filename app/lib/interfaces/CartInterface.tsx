@@ -1,6 +1,5 @@
+import { ProductType } from "./ProductType";
 
-export default interface CartInterface {
-  ID: string;
-  Count: number;
-  Price: string
+export default interface CartInterface extends ProductType {
+  count: number;
 }

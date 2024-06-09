@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Ecommerce App",
   description: "Ecommerce App",
 };
-
+// TODO: Fix font error
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",

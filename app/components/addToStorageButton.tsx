@@ -18,7 +18,7 @@ const AddToStorageButton = ({ product, count, disabled }: { product: ProductType
             title: "Item added to cart",
             description: `${product.title} added to cart successfully`,
           })
-          addProductStorage(product.id, product.price, count);
+          addProductStorage(product, count);
           router.back()
         }}
       >

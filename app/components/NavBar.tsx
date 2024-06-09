@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import SearchBar from "./SearchBar";
 import headerComponent from "@/app/lib/interfaces/HeaderComponent";
 import MobileNavBar from "./mobileMenu";
-
+// TODO: Make night mode
 const NavBar = () => {
   const Items: headerComponent[] = [
     { component: <IoMdHome size={40} />, link: "/" },

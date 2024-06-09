@@ -15,29 +15,31 @@ const Page = async ({ params }: { params: { id: string } }) => {
   // To Create Loading Effect
   //await new Promise((res) => setTimeout(res, 5000));
   return (
-    <div className="flex  items-center h-full text-left ">
-      <div className=" items-center p-2    ">
-        <h1 className="text-3xl text-thirdColor text-center mb-5">
-          {product.title}
-        </h1>
-        <Image
-          className="w-[200px] h-[200px] md:h-[300px] md:w-[300px]  border-2 border-black "
-          src={product.image}
-          alt={product.description}
-          width={150}
-          height={150}
-        />
-        <div>
-          <h3 className="text-lg text-thirdColor">Description: </h3>
-          <p className="text-primaryColor text-sm">{product.description}</p>
-          <h3 className="text-lg text-thirdColor">Price:</h3>
-          <p className="text-primaryColor">{product.price} $</p>
-          <h1 className="text-thirdColor">category: </h1>
-          <p className="text-primaryColor"> {product.category.toUpperCase()}</p>
-          <AddtoStorageForm product={product} />
+    <>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-thirdColor text-center mb-5">
+        {product.title}
+      </h1>
+      <div className="flex  items-center h-full text-left ">
+        <div className=" items-center p-2    ">
+          <Image
+            className="w-[200px] h-[200px] md:h-[300px] md:w-[300px]  border-2 border-black "
+            src={product.image}
+            alt={product.description}
+            width={150}
+            height={150}
+          />
+          <div>
+            <h3 className="text-lg text-thirdColor">Description: </h3>
+            <p className="text-primaryColor text-sm">{product.description}</p>
+            <h3 className="text-lg text-thirdColor">Price:</h3>
+            <p className="text-primaryColor">{product.price} $</p>
+            <h1 className="text-thirdColor">category: </h1>
+            <p className="text-primaryColor"> {product.category.toUpperCase()}</p>
+            <AddtoStorageForm product={product} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

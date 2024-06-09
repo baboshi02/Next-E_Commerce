@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ProductType } from "../lib/interfaces/ProductType";
-import { useFetch } from "../hooks/useFetch";
 import SearchProductElement from "./searchProductElement";
-//TODO: wxtract to cusrom hook
+import useFilterResults from "../hooks/useFilterResults";
 const SearchBar = () => {
   const [query, setQuery] = useState("");
-  const [filteredData, setFilteredData] = useState<Array<ProductType>>([]);
-  const { response, isError } = useFetch<ProductType[]>("/api/products");
-  const handleChange = () => {
-    const _filteredData = response?.filter((r: ProductType) =>
-      r.title.toLowerCase().includes(query.toLowerCase())
-    ) || [];
-    setFilteredData(_filteredData);
-  };
-  useEffect(handleChange, [query]);
+  const { filteredData, isError } = useFilterResults(query)
   return (
     <div className="relative  ">
       <form onSubmit={(e) => e.preventDefault()}>
