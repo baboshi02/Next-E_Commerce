@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <AiOutlineLoading
       size={50}
-      className="animate-spin mx-auto text-primaryColor"
+      className="animate-spin mx-auto text-primaryColor   dark:text-DarkPrimaryColor"
     />
   );
 };

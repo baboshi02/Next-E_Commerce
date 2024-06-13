@@ -15,8 +15,8 @@ const Page = async ({ params }: { params: { id: string } }) => {
   // To Create Loading Effect
   //await new Promise((res) => setTimeout(res, 5000));
   return (
-    <>
-      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-thirdColor text-center mb-5">
+    <div className="text-thirdColor dark:text-DarkThirdColor">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  text-center mb-5">
         {product.title}
       </h1>
       <div className="flex  items-center h-full text-left ">
@@ -29,18 +29,20 @@ const Page = async ({ params }: { params: { id: string } }) => {
             height={150}
           />
           <div>
-            <h3 className="text-lg text-thirdColor">Description: </h3>
-            <p className="text-primaryColor text-sm">{product.description}</p>
-            <h3 className="text-lg text-thirdColor">Price:</h3>
-            <p className="text-primaryColor">{product.price} $</p>
-            <h1 className="text-thirdColor">category: </h1>
-            <p className="text-primaryColor"> {product.category.toUpperCase()}</p>
+            <h3 className="text-lg ">Description: </h3>
+            <p className="text-primaryColor dark:text-DarkPrimaryColor text-sm">{product.description}</p>
+            <h3 className="text-lg ">Price:</h3>
+            <p className="text-primaryColor dark:text-DarkPrimaryColor">{product.price} $</p>
+            <h1 >category: </h1>
+            <p className="text-primaryColor dark:text-DarkPrimaryColor"> {product.category.toUpperCase()}</p>
             <AddtoStorageForm product={product} />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default Page;
+
+

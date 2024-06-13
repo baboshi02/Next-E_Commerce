@@ -20,7 +20,7 @@ const SearchBar = () => {
       ) : (
         filteredData?.length > 0 &&
         query.length > 0 &&
-        <div className="max-h-[25vh] overflow-scroll w-full absolute  border-2 border-primaryColor   flex-col    flex  transition duration-200 shadow-xl rounded-md">
+        <div className="max-h-[25vh] overflow-scroll w-full absolute  border-2 border-primaryColor dark:border-DarkPrimaryColor   flex-col    flex  transition duration-200 shadow-xl rounded-md">
           {
             filteredData?.map((r: ProductType) => (
               <SearchProductElement Product={r} />

@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 //TODO: Add navigating in buttom of every page
 export default async function Home() {
   return (
-    <div className="max-w-[1640px] mx-auto p-4 relative text-white">
+    <div className="max-w-[1640px] mx-auto p-4 relative ">
       <Hero />
-      <h1 className="font-bold text-5xl py-3 text-primaryColor underline">Our Story</h1>
-      <div className="text-gray-300 text-left py-3 font-sans text-2xl">
+      <h1 className="font-bold text-5xl py-3 dark:text-DarkThirdColor text-thirdColor underline">Our Story</h1>
+      <div className=" text-left py-3 font-sans text-2xl">
         At BaboshiBay, we are passionate about providing high-quality products and exceptional customer service. Founded in 2022, our company was born out of a desire to make it easier for people to access the items they need and love, all from the comfort of their own homes.
         We started small, but with a big vision - to build an e-commerce platform that truly puts the customer first. Over the years, we've grown tremendously, expanding our product offerings and reaching customers across the country. But no matter how much we've grown, our commitment to our original mission has never wavered.
         Today, we are proud to offer a curated selection of products spanning a wide range of categories, from home goods and electronics to fashion and beauty. Our team of experts scours the market to find the best items, ensuring that every purchase our customers make is a great one.
@@ -17,7 +17,7 @@ export default async function Home() {
         We are grateful to our loyal customers who have supported us along the way, and we look forward to continuing to grow and evolve to better serve your needs. Thank you for being a part of our story, and we can't wait to see what the future holds.
       </div>
       <Button variant={"link"}>
-        <Link className="text-2xl text-thirdColor " href={"/products"}  >
+        <Link className="text-2xl text-thirdColor dark:text-DarkThirdColor" href={"/products"}  >
           Products Page
         </Link>
       </Button>

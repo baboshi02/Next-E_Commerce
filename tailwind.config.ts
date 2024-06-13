@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss"
-
+import colors from "tailwindcss/colors"
 const config = {
   darkMode: ["class"],
   content: [
@@ -20,9 +20,12 @@ const config = {
     },
     extend: {
       colors: {
-        primaryColor: "#FEE715",
-        secondaryColor: "#101820",
-        thirdColor: "#3F5EF9",
+        primaryColor: colors.black,
+        secondaryColor: colors.blue[200],
+        thirdColor: colors.teal[800],
+        DarkPrimaryColor: "#FEE715",
+        DarkSecondaryColor: "#101820",
+        DarkThirdColor: "#3F5EF9",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

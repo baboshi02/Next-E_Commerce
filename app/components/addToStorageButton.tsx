@@ -12,7 +12,7 @@ const AddToStorageButton = ({ product, count, disabled }: { product: ProductType
   const router = useRouter()
   return (
     <ToolTipComponent trigger={
-      <Button disabled={disabled} variant="outline" className="text-thirdColor bg-blue-200 hover:text-gray-600 text-lg"
+      <Button disabled={disabled} variant="outline" className="dark:text-DarkThirdColor dark:bg-DarkSecondaryColor text-thirdColor bg-secondaryColor hover:text-gray-600 text-lg"
         onClick={() => {
           toast({
             title: "Item added to cart",

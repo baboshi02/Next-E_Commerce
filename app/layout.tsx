@@ -27,7 +27,7 @@ export default function RootLayout({
       lang="en"
 
     >
-      <body className={cn("min-h-screen flex flex-col font-sans bg-secondaryColor box-border text-center text-lg ", fontSans.variable)}>
+      <body className={cn("min-h-screen flex flex-col font-sans bg-secondaryColor dark:bg-DarkSecondaryColor text-primaryColor dark:text-DarkPrimaryColor box-border text-center text-lg ", fontSans.variable)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

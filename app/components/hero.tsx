@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Overlay */}
       <div className="absolute w-full h-full text-gray-200 max-h-[500px] bg-black/40 flex items-center justify-center">
         <h1 className="px-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-300">
-          E <span className="text-thirdColor">Commerce</span><br /><span className="text-thirdColor">Web</span>site
+          E <span className="text-thirdColor dark:text-DarkThirdColor">Commerce</span><br /><span className="text-thirdColor dark:text-DarkThirdColor">Web</span>site
         </h1>
       </div>
       <Image

@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="p-2 border-t border-t-primaryColor  h-min  text-white mt-2 text-center text-xl w-full ">
+    <footer className="p-2 border-t-2 dark:border-t-DarkPrimaryColor  border-t-primaryColor  h-min   mt-2 text-center text-xl w-full ">
       Baboshi
     </footer>
   )

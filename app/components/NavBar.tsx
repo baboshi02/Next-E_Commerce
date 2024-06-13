@@ -28,14 +28,14 @@ const NavBar = () => {
   ];
   const path = usePathname();
   return (
-    <header className="sticky top-0 z-10 bg-secondaryColor  rounded-sm border-b flex justify-end sm:block items-center gap-1    border-primaryColor  shadow-md  p-2">
+    <header className="sticky top-0 z-10 bg-secondaryColor dark:bg-DarkSecondaryColor rounded-b-sm border-b-2 flex justify-end sm:block items-center gap-1  dark:border-b-DarkPrimaryColor  border-b-primaryColor  shadow-md  p-2">
       <div className="sm:flex justify-between items-center gap-7 hidden">
         <div className="flex gap-2">
           {Items.map(item => (
             <Link
               href={item.link}
               key={item.link}
-              className={`hover:text-zinc-300 transition-colors duration-200 ${path == item.link ? "text-gray-400" : "text-thirdColor"
+              className={`hover:text-zinc-300 transition-colors duration-200 ${path == item.link ? "text-gray-400" : "text-thirdColor dark:text-DarkThirdColor"
                 }`}
             >
               {item.component}

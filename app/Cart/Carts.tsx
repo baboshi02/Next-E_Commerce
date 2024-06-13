@@ -21,7 +21,7 @@ export const Carts = () => {
             <CartProductElement key={product.id} product={product}
             />
           )) : <h1> Empty cart</h1>
-        };
+        }
       </div>
     </>
   )

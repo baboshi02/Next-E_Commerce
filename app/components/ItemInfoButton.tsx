@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button"
 const ItemInfoBtn = ({ productId }: { productId: string }) => {
   return (
     <ToolTipComponent trigger={
-      <Link href={`/products/${productId}`} className={`${buttonVariants({ variant: "link" })} text-thirdColor hover:text-gray-600`}  >
+      <Link href={`/products/${productId}`} className={`${buttonVariants({ variant: "link" })}dark:text-DarkThirdColor  text-thirdColor hover:text-gray-600`}  >
         <FaInfoCircle size={25} />
       </Link>
     }
