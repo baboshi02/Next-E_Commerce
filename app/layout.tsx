@@ -5,11 +5,14 @@ import "./globals.css";
 import { cn } from '@/lib/utils'
 import { Toaster } from "@/components/ui/toaster";
 
+import Footer from "./components/Footer";
+import { ThemeProvider } from "./components/themeProvider";
 export const metadata: Metadata = {
   title: "Ecommerce App",
   description: "Ecommerce App",
 };
 // TODO: Fix font error
+// TODO: Fix font loading
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -24,10 +27,20 @@ export default function RootLayout({
       lang="en"
 
     >
-      <body className={cn("min-h-screen font-sans bg-secondaryColor box-border text-center text-lg", fontSans.variable)}>
-        <NavBar />
-        <div className="m-2 p-1">{children}</div>
-        <Toaster />
+      <body className={cn("min-h-screen flex flex-col font-sans bg-secondaryColor box-border text-center text-lg ", fontSans.variable)}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="flex-1">
+            <NavBar />
+            <div className="m-2 p-1">{children}</div>
+          </main>
+          <Toaster />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -6,7 +6,7 @@ const SearchBar = () => {
   const [query, setQuery] = useState("");
   const { filteredData, isError } = useFilterResults(query)
   return (
-    <div className="relative  ">
+    <div className="relative">
       <form onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"

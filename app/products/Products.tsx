@@ -3,7 +3,6 @@ import { ProductType } from "../lib/interfaces/ProductType";
 
 
 export const Products = async () => {
-  await new Promise(res => setTimeout(res, 3000))
   let products;
   try {
     products = await fetch("https://fakestoreapi.com/products").then((res) =>

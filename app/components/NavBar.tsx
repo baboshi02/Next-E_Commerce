@@ -8,13 +8,18 @@ import { usePathname } from "next/navigation";
 import SearchBar from "./SearchBar";
 import headerComponent from "@/app/lib/interfaces/HeaderComponent";
 import MobileNavBar from "./mobileMenu";
+import { SwitchDemo } from "./Switch";
+import { MoonIcon } from "@radix-ui/react-icons"
+import { ModeToggle } from "./ModeToggle";
 // TODO: Make night mode
+// TODO: Change Icons to radix icons
 const NavBar = () => {
   const Items: headerComponent[] = [
     { component: <IoMdHome size={40} />, link: "/" },
     {
       component: <MdOutlineProductionQuantityLimits size={40} />,
       link: "/products",
+
     },
     {
       component: <FaCommentDollar size={40} />,
@@ -23,7 +28,7 @@ const NavBar = () => {
   ];
   const path = usePathname();
   return (
-    <header className="sticky top-0 z-10 bg-secondaryColor  rounded-sm border-b flex justify-end sm:block    border-primaryColor  shadow-md  p-2">
+    <header className="sticky top-0 z-10 bg-secondaryColor  rounded-sm border-b flex justify-end sm:block items-center gap-1    border-primaryColor  shadow-md  p-2">
       <div className="sm:flex justify-between items-center gap-7 hidden">
         <div className="flex gap-2">
           {Items.map(item => (
@@ -39,8 +44,12 @@ const NavBar = () => {
           )}
         </div>
         {path == "/products" && <SearchBar />}
+        {/* <SwitchDemo /> */}
+        <ModeToggle />
       </div>
-      <MobileNavBar Items={Items} path={path} />
+      <div>
+        <MobileNavBar Items={Items} path={path} />
+      </div>
     </header>
   );
 };

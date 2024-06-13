@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { FaSearch } from "react-icons/fa";
 import React, { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import headerComponent from "../lib/interfaces/HeaderComponent";
-import SearchBar from "./SearchBar";
-// TODO: Add search functionality to mobile
+import { MoonIcon } from "@radix-ui/react-icons";
 const MobileNavBar = ({
   Items,
   path,
@@ -15,7 +13,6 @@ const MobileNavBar = ({
   const [isBtnActive, setIsBtnActive] = useState(false);
   return (
     <div className=" flex items-center gap-2 justify-end sm:hidden ">
-      {path == "/" && <SearchBar />}
       <IoMdMenu
         size={40}
         className={`hover:text-zinc-300 transition-colors z-20 hover:cursor-pointer  duration-200  ${isBtnActive ? "text-gray-400" : "text-thirdColor"
@@ -40,8 +37,10 @@ const MobileNavBar = ({
             </Link>
           );
         })}
+        <MoonIcon className=" h-8 w-8 text-thirdColor" />
       </div>
     </div>
+
   );
 };
 
