@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   title: "Ecommerce App",
   description: "Ecommerce App",
 };
-// TODO: Fix light mode coloring
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",

@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-// TODO: add more images
 const Hero = () => {
   return (
     <div className="max-h-[500px] relative">

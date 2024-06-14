@@ -8,7 +8,6 @@ const PurchasePage = () => {
   const router = useRouter()
   useEffect(() => {
     const timeout = setTimeout(() => {
-      console.log("mama")
       deleteAllProducts()
       router.push("/")
     }, 5000)
