@@ -1,9 +1,6 @@
-import Link from "next/link";
 import Hero from "./components/hero";
-import { Button } from "@/components/ui/button";
 //TODO: Work on hero page and styling
 //TODO: Add custom favicon and logo
-//TODO: Add navigating in buttom of every page
 export default async function Home() {
   return (
     <div className="max-w-[1640px] mx-auto p-4 relative ">
@@ -16,11 +13,6 @@ export default async function Home() {
         But what truly sets us apart is our dedication to customer satisfaction. We believe that shopping online should be a seamless and enjoyable experience, which is why we have invested heavily in building a user-friendly platform, providing responsive customer support, and ensuring fast and reliable shipping.
         We are grateful to our loyal customers who have supported us along the way, and we look forward to continuing to grow and evolve to better serve your needs. Thank you for being a part of our story, and we can't wait to see what the future holds.
       </div>
-      <Button variant={"link"}>
-        <Link className="text-2xl text-thirdColor dark:text-DarkThirdColor" href={"/products"}  >
-          Products Page
-        </Link>
-      </Button>
     </div >
   );
 }

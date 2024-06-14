@@ -41,3 +41,7 @@ export const deleteProduct = (id: string) => {
   const deletedProducts = parsedProducts.filter(product => product.id != id)
   sessionStorage.setItem('Products', JSON.stringify(deletedProducts))
 }
+
+export const deleteAllProducts = () => {
+  sessionStorage.removeItem("Products")
+}

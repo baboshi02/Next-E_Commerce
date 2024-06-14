@@ -11,11 +11,9 @@ const AddtoStorageForm = ({ product }: { product: ProductType }) => {
     const curCount = String(getProductCount(product?.id))
     setCount(curCount)
   }, [])
-  console.log(count)
   return (
     <div className="w-min text-center">
       <Input type="number" min={1} className=" bg-white  my-1" value={count} onChange={(e) => setCount(e.target.value)} />
-      {/* TODO: Fix input to be only numerical*/}
       <div className="w-full flex gap-1">
         <AddToStorageButton product={product} count={count} disabled={Number(count) < 1} />
         <DeleteFromStorageButton product={product} disabled={getProductCount(product.id) < 1} />

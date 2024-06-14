@@ -2,6 +2,8 @@ import React from "react";
 import { Suspense } from "react";
 import Loading from "../loading";
 import { Products } from "./Products";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const Page = () => {
   return (
     <>
