@@ -12,8 +12,6 @@ export const metadata: Metadata = {
   title: "Ecommerce App",
   description: "Ecommerce App",
 };
-// TODO: Fix font error
-// TODO: Fix font loading
 // TODO: Fix light mode coloring
 const fontSans = FontSans({
   subsets: ["latin"],

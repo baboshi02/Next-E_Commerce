@@ -11,7 +11,6 @@ import MobileNavBar from "./mobileMenu";
 import { SwitchDemo } from "./Switch";
 import { MoonIcon } from "@radix-ui/react-icons"
 import { ModeToggle } from "./ModeToggle";
-// TODO: Change Icons to radix icons
 const NavBar = () => {
   const Items: headerComponent[] = [
     { component: <IoMdHome size={40} />, link: "/" },

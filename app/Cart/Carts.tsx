@@ -17,13 +17,18 @@ export const Carts = () => {
   }, [])
   return (
     <>
-      <h1 className="text-red-500 text-5xl"> {products.length > 0 ? <>TotalPrice: {totalPrice.toFixed(2)}$</> : <>Empty Cart</>}</h1>
-      {/*TODO: <Button variant={"outline"} onClick={() => { deleteAllProducts(); router.refresh() }}> */}
-      {/*   delete */}
-      {/* </Button > */}
-      <Button onClick={() => router.push("/purchase")}>
-        Purchase
-      </Button>
+      <h1 className="text-red-500 text-5xl mb-2"> {products.length > 0 ? <>TotalPrice: {totalPrice.toFixed(2)}$</> : <>Empty Cart</>}</h1>
+      {
+
+        products.length > 0 && <div className="">
+          <Button variant={"destructive"} onClick={() => { deleteAllProducts(); router.refresh() }}>
+            delete
+          </Button >
+          <Button onClick={() => router.push("/purchase")}>
+            Purchase
+          </Button>
+        </div>
+      }
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-2 gap-2">
         {
           products ? products.map((product) => (

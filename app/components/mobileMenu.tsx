@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import headerComponent from "../lib/interfaces/HeaderComponent";
-import { MoonIcon } from "@radix-ui/react-icons";
+import { ModeToggle } from "./ModeToggle";
 const MobileNavBar = ({
   Items,
   path,
@@ -20,7 +20,7 @@ const MobileNavBar = ({
         onClick={() => setIsBtnActive(!isBtnActive)}
       />
       <div
-        className={`absolute top-0 right-0 left-0 bottom-0 flex-col bg-black h-screen justify-center items-center gap-2  ${isBtnActive ? "flex" : "hidden"
+        className={`absolute top-0 right-0 left-0 bottom-0 flex-col dark:bg-black bg-secondaryColor h-screen justify-center items-center gap-2  ${isBtnActive ? "flex" : "hidden"
           }`}
       >
         {Items.map((item) => {
@@ -37,7 +37,7 @@ const MobileNavBar = ({
             </Link>
           );
         })}
-        <MoonIcon className=" h-8 w-8 text-thirdColor dark:text-DarkThirdColor" />
+        <ModeToggle />
       </div>
     </div>
 

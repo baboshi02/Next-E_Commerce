@@ -1,6 +1,4 @@
 import Hero from "./components/hero";
-//TODO: Work on hero page and styling
-//TODO: Add custom favicon and logo
 export default async function Home() {
   return (
     <div className="max-w-[1640px] mx-auto p-4 relative ">
