@@ -13,7 +13,7 @@ const PageLink = () => {
     <div className="h-min mx-auto">
       {
         pageLinks[path]?.map(page => (
-          <Button variant={"link"} >
+          <Button variant={"link"} key={page.link} >
             <Link className="text-2xl text-thirdColor dark:text-DarkThirdColor" href={page.link}  >
               {page.name}
             </Link>

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import NavBar from "@/app/components/NavBar";
-import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from '@/lib/utils'
 import { Toaster } from "@/components/ui/toaster";
@@ -12,10 +11,6 @@ export const metadata: Metadata = {
   title: "Ecommerce App",
   description: "Ecommerce App",
 };
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,7 +20,7 @@ export default function RootLayout({
     <html
       lang="en"
     >
-      <body className={cn("min-h-screen flex flex-col font-sans bg-secondaryColor dark:bg-DarkSecondaryColor text-primaryColor dark:text-DarkPrimaryColor box-border text-center text-lg ", fontSans.variable)}>
+      <body className={cn("min-h-screen flex flex-col font-sans bg-secondaryColor dark:bg-DarkSecondaryColor text-primaryColor dark:text-DarkPrimaryColor box-border text-center text-lg ")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

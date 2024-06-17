@@ -11,7 +11,7 @@ const useFilterResults = (query: string) => {
     ) || [];
     setFilteredData(_filteredData);
   };
-  useEffect(handleChange, [query]);
+  useEffect(handleChange, [query]);// eslint-disable-line react-hooks/exhaustive-deps
   return { isError, filteredData }
 }
 export default useFilterResults

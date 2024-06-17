@@ -1,4 +1,4 @@
-# Next.js Application with Shadcn UI, TypeScript, and React Icons
+# Next.js E_commerce demo with Shadcn UI, TypeScript, and React Icons
 
 This project is a sample Next.js application showcasing the usage of `@shadcn/ui` for styling, TypeScript for type safety, and `react-icons` for incorporating icons into the application.
 
@@ -9,8 +9,8 @@ To get a local copy of this project up and running, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/baboshi02/Next-E_Commerce.git
+   cd Next-E_Commerce
    ```
 
 2. **Install dependencies:**
