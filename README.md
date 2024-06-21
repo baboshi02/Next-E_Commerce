@@ -1,4 +1,4 @@
-# Next.js E_commerce demo with Shadcn UI, TypeScript, and React Icons
+# Next.js E_commerce demo .
 
 This project is a sample Next.js application showcasing the usage of `@shadcn/ui` for styling, TypeScript for type safety, and `react-icons` for incorporating icons into the application.
 
